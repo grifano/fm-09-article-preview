@@ -13,7 +13,7 @@ from tech to the best cycling routes.
 
 Happy exploring!
 
-# Project: Meet landing page
+# Project: Article Preview Component
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges that help to improve
 coding skills by building realistic projects.
@@ -27,6 +27,7 @@ design as possible.
 
 Your users should be able to:
 
+- See the social media share links when they click the share icon
 - View the optimal layout depending on their device's screen size
 - See hover and focus states for interactive elements
 
@@ -34,12 +35,13 @@ Your users should be able to:
 
 - HTML;
 - CSS;
+- Java Script
 
 ### Links
 
 - Solution URL: [FrontendMentor Solution Hub](!ADD LINK!)
 - Live Site URL:
-  [GitHub Pages](https://grifano.github.io/fm-08-meet-landing-page/)
+  [GitHub Pages](https://grifano.github.io/fm-09-article-preview/)
 
 ## Author
 
