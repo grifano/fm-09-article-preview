@@ -117,17 +117,12 @@ main {
 .container {
   margin: 0 auto;
   max-width: 375px;
-  padding: 0 32px;
+  padding: 0 24px;
 }
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 768px;
-    padding: 0 44px;
-  }
-}
-@media screen and (min-width: 991px) {
-  .container {
-    max-width: 1208px;
+    max-width: 760px;
+    padding: 0 15px;
   }
 }
 /*** Visually hide element, but keep visible for search engine ***/
@@ -142,6 +137,202 @@ main {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+/*** Section - Article Preview ***/
+.section-aricles {
+}
+.article-card {
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 40px 40px -10px rgba(201, 213, 225, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+.aricle-card-image {
+  img {
+    height: 100%;
+  }
+}
+.article-card-content {
+  padding: 36px 32px 16px 32px;
+}
+.article-card-heading {
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--text-heading-color);
+  margin-bottom: 12px;
+}
+.article-card-text {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.54;
+  letter-spacing: 0.01em;
+  margin-bottom: 32px;
+}
+.article-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.article-card-avatar {
+}
+.article-info {
+  font-size: 13px;
+  line-height: 1.54;
+  letter-spacing: 0.01em;
+}
+.article-author-name {
+  font-weight: 700;
+  color: #48556a;
+}
+.article-date {
+  font-weight: 500;
+  color: #9daec2;
+}
+.article-share-button {
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #ecf2f8;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 18px;
+  right: 32px;
+  z-index: 2;
+  transition: background 0.4s ease;
+  &.is-pressed {
+    background-color: #6e8098;
+    svg {
+      fill: #fff;
+    }
+  }
+  svg {
+    fill: #6e8098;
+  }
+}
+.share-menu-modal {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #48556a;
+  display: flex;
+  gap: 21px;
+  align-items: center;
+  padding: 22px 32px;
+  min-height: 64px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.share-caption {
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  color: #9daec2;
+}
+.share-list {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.share-item {
+  width: 20px;
+  height: 20px;
+}
+.share-link {
+  svg {
+    fill: #fff;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .article-card {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 285px Auto;
+  }
+  .aricle-card-image {
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+  }
+  .article-card-heading {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .article-card-text {
+    margin-bottom: 20px;
+  }
+  .article-card-footer {
+    position: relative;
+  }
+  .share-menu-modal {
+    position: absolute;
+    width: 248px;
+    padding: 18px 37px;
+    min-height: 55px;
+    bottom: 56px;
+    left: 240px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 0 rgba(201, 213, 225, 0.5);
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -36px; /* Position it right below the modal */
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 24px;
+      border-style: solid;
+      border-color: #48556a transparent transparent transparent; /* Triangle pointing down */
+    }
+  }
+  .article-share-button {
+    position: static;
+  }
+}
+@media screen and (min-width: 991px) {
+  .article-card-content {
+    padding: 36px 32px 20px 32px;
+  }
+  .article-share-button {
+    border: 1px solid transparent;
+    transition: border 0.4s ease;
+  }
+  .article-share-button:hover,
+  .article-share-button:focus {
+    border-color: #6e8098;
+  }
+  .share-link {
+    position: relative;
+    &::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+  }
+  .share-link:hover,
+  .share-link:focus {
+    &::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 
 /*** Attribution footer ***/

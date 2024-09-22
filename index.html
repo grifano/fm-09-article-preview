@@ -21,8 +21,141 @@
   </head>
   <body>
     <main>
-      <section class="section-features" id="section-features">
-        <div class="container">Lorem ipsum dolor sit amet.</div>
+      <section class="section-aricles" id="section-articles">
+        <h2 class="visually-hidden">Articles</h2>
+        <div class="container">
+          <article class="article-card">
+            <picture class="aricle-card-image">
+              <!-- Desktop -->
+              <source
+                type="image/webp"
+                media="(min-width: 991px)"
+                srcset="
+                  ./images/desktop/room-desktop.jpg    1x,
+                  ./images/desktop/room-desktop@2x.jpg 2x
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./images/desktop/room-desktop.webp    1x,
+                  ./images/desktop/room-desktop@2x.webp 2x
+                "
+              />
+              <!-- Mobile -->
+              <source
+                type="image/webp"
+                media="(min-width: 320px)"
+                srcset="
+                  ./images/mobile/room-mobile.webp    1x,
+                  ./images/mobile/room-mobile@2x.webp 2x
+                "
+              />
+              <source
+                media="(min-width: 320px)"
+                srcset="
+                  ./images/mobile/room-mobile.jpg    1x,
+                  ./images/mobile/room-mobile@2x.jpg 2x
+                "
+              />
+              <img
+                width="327"
+                height="200"
+                src="./images/mobile/room-mobile.jpg"
+                alt="table, picture, and vase on a table"
+              />
+            </picture>
+            <div class="article-card-content">
+              <h3 class="article-card-heading">
+                Shift the overall look and feel by adding these wonderful
+                touches to furniture in your home
+              </h3>
+              <p class="article-card-text">
+                Ever been in a room and felt like something was missing? Perhaps
+                it felt slightly bare and uninviting. I’ve got some simple tips
+                to help you make any room feel complete.
+              </p>
+              <footer class="article-card-footer">
+                <picture class="article-card-avatar">
+                  <source
+                    type="image/webp"
+                    srcset="
+                      ./images/author.webp    1x,
+                      ./images/author@2x.webp 2x
+                    " />
+                  <source
+                    srcset="
+                      ./images/author.png    1x,
+                      ./images/author@2x.png 2x
+                    " />
+                  <img
+                    width="40"
+                    height="40"
+                    src="./images/author.png"
+                    alt="article author photo"
+                /></picture>
+                <div class="article-info">
+                  <p class="article-author-name">Michelle Appleton</p>
+                  <p class="article-date">28 Jun 2020</p>
+                </div>
+                <button
+                  id="shareButton"
+                  class="article-share-button"
+                  type="button"
+                  aria-label="share action"
+                >
+                  <svg width="15" height="13">
+                    <use href="./images/icons.svg#icon-share"></use>
+                  </svg>
+                </button>
+                <div class="share-menu-modal" id="shareMenuModal">
+                  <p class="share-caption">SHARE</p>
+                  <ul class="share-list">
+                    <li class="share-item">
+                      <a
+                        href="https://www.facebook.com/serhiy.orlenko"
+                        class="share-link"
+                        aria-label="facebook link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <svg width="20" height="20">
+                          <use href="./images/icons.svg#icon-facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="share-item">
+                      <a
+                        href="https://x.com/OrlenkoSerhii"
+                        class="share-link"
+                        aria-label="twitter link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <svg width="20" height="20">
+                          <use href="./images/icons.svg#icon-twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="share-item">
+                      <a
+                        href="https://www.pinterest.com/"
+                        class="share-link"
+                        aria-label="pinterest link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <svg width="20" height="20">
+                          <use href="./images/icons.svg#icon-pinterest"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </footer>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
     <footer class="attribution">
@@ -33,5 +166,19 @@
         >. Coded by <a href="https://www.grifano.com">Serhii Orlenko</a>.
       </div>
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const shareMenuModal = document.getElementById('shareMenuModal');
+        const shareButton = document.getElementById('shareButton');
+
+        function onShareButtonClick(event) {
+          event.currentTarget.classList.toggle('is-pressed');
+          shareMenuModal.classList.toggle('is-active');
+        }
+
+        shareButton.addEventListener('click', onShareButtonClick);
+      });
+    </script>
   </body>
 </html>
